@@ -18,21 +18,21 @@ import java.util.ArrayList;
 
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalViewHolder> {
 
-    ArrayList<Animal> animalList;
+    static ArrayList<Animal> animalList;
     Context context;
+    public AnimalSelected animalSelected;
 
-    public AnimalAdapter(ArrayList<Animal> animalList, Context context) {
+
+    public AnimalAdapter(ArrayList<Animal> animalList, AnimalSelected animalSelected) {
         this.animalList = animalList;
-        this.context = context;
+        this.animalSelected = animalSelected;
     }
 
     @NonNull
     @Override
     public AnimalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        View view = LayoutInflater.from(context).inflate(R.layout.animal_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.animal_item, parent, false);
         return new AnimalViewHolder(view);
-
     }
 
     @Override
@@ -51,10 +51,10 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
         return animalList.size();
     }
 
-    public static class AnimalViewHolder extends RecyclerView.ViewHolder {
+    public class AnimalViewHolder extends RecyclerView.ViewHolder {
 
         ImageView animalImage;
-        TextView name, veterinary, pendingAmount;
+        TextView name, veterinary, pendingAmount, totalAnimal;
 
         public AnimalViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -62,7 +62,30 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
             veterinary = itemView.findViewById(R.id.veterinario);
             pendingAmount = itemView.findViewById(R.id.cantidad);
             animalImage = itemView.findViewById(R.id.elementImage);
+            totalAnimal = itemView.findViewById(R.id.totalAnimals);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    animalSelected.selectedAnimal(animalList.get(getAdapterPosition()));
+                }
+            });
+
         }
     }
 
+    public ArrayList<Animal> getAnimalList() {
+        return animalList;
+    }
+
+    public static int numberOfElements(){
+        return animalList.size();
+    }
+
+    public interface AnimalSelected {
+        void selectedAnimal(Animal animal);
+    }
 }
+
+
+

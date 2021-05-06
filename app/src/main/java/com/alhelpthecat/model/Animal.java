@@ -1,6 +1,8 @@
 package com.alhelpthecat.model;
 
-public class Animal {
+import java.io.Serializable;
+
+public class Animal implements Serializable {
 
     String nombre, veterinario, urlImage, cantidadPendiente, cantidadRecaudada, intervenciones;
 

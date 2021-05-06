@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.alhelpthecat.model.Animal;
 import com.google.firebase.database.DataSnapshot;
@@ -16,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ShowAnimals extends AppCompatActivity {
+public class ShowAnimals extends AppCompatActivity implements AnimalAdapter.AnimalSelected{
 
     private final String ANIMALS = "animales";
     private ArrayList<Animal> animalList;
@@ -47,6 +49,8 @@ public class ShowAnimals extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                TextView animalCount;
+
                 animalList.clear();
 
                 for (DataSnapshot snapshot: dataSnapshot.getChildren()){
@@ -54,6 +58,9 @@ public class ShowAnimals extends AppCompatActivity {
                     animalList.add(animal);
                 }
                 animalAdapter.notifyDataSetChanged();
+
+                animalCount = findViewById(R.id.totalAnimals);
+                animalCount.setText(String.valueOf(AnimalAdapter.numberOfElements()));
             }
 
             @Override
@@ -62,5 +69,10 @@ public class ShowAnimals extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public void selectedAnimal(Animal animal) {
+        startActivity(new Intent(ShowAnimals.this, ActivityDetails.class).putExtra("animal",animal));
     }
 }
