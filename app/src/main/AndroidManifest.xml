@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelpTheCat">
         <activity android:name=".ActivityDetails"></activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".ShowAnimals">
+        <activity android:name=".ShowAnimals" />
+        <activity android:name=".MainActivity">ShowAnimals
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

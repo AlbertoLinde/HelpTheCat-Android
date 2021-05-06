@@ -13,5 +13,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/poppins</item>
+
+        <item name="colorControlNormal">#FFA800</item>
+        <item name="colorControlActivated">#FFA800</item>
+        <item name="colorControlHighlight">#FFA800</item>
+
     </style>
 </resources>
