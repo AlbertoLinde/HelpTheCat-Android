@@ -64,6 +64,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
             animalImage = itemView.findViewById(R.id.elementImage);
             totalAnimal = itemView.findViewById(R.id.totalAnimals);
 
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -72,14 +73,6 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.AnimalView
             });
 
         }
-    }
-
-    public ArrayList<Animal> getAnimalList() {
-        return animalList;
-    }
-
-    public static int numberOfElements(){
-        return animalList.size();
     }
 
     public interface AnimalSelected {

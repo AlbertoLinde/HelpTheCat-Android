@@ -60,7 +60,7 @@ public class ShowAnimals extends AppCompatActivity implements AnimalAdapter.Anim
                 animalAdapter.notifyDataSetChanged();
 
                 animalCount = findViewById(R.id.totalAnimals);
-                animalCount.setText(String.valueOf(AnimalAdapter.numberOfElements()));
+                animalCount.setText(String.valueOf(animalAdapter.getItemCount()));
             }
 
             @Override

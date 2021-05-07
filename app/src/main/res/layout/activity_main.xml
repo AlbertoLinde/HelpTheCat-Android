@@ -93,7 +93,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿Has olvidado la contraseña?"
+        android:text="@string/login_forgot_password"
         app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +110,8 @@
         app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
-        app:layout_constraintVertical_bias="0.666"
-        tools:srcCompat="@drawable/ic_right" />
+        app:layout_constraintVertical_bias="0.1"
+        android:src="@drawable/ic_right"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

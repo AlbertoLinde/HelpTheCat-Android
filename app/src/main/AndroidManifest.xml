@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HelpTheCat">
-        <activity android:name=".ActivityDetails"></activity>
-        <activity android:name=".ShowAnimals" />
-        <activity android:name=".MainActivity">ShowAnimals
+        <activity android:name=".ActivityDetails"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".MainActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ShowAnimals" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
