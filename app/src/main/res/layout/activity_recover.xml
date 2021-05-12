@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Bienvenid@"
+        android:text="Recuperar Credenciales"
         android:textColor="@color/colorapp"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -81,22 +81,11 @@
         android:layout_margin="30dp"
         android:background="@drawable/button_shape"
         android:elevation="30dp"
-        android:text="Entrar"
+        android:text="Recuperar"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass" />
-
-    <TextView
-        android:id="@+id/textViewRecover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="goRecoverPass"
-        android:text="@string/login_forgot_password"
-        app:layout_constraintBottom_toTopOf="@+id/buttonRecover"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pass" />
 

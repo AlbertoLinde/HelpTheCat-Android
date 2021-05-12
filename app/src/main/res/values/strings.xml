@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">HelpTheCat</string>
     <string name="login_forgot_password">¿Has olvidado la contraseña?</string>
+    <string name="details_title">¿Qué me pasa?</string>
 </resources>

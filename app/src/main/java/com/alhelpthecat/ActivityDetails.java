@@ -17,7 +17,7 @@ public class ActivityDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        TextView description;
+        TextView description, tViewDonations;
         ImageView iView;
 
         Intent intent = getIntent();
@@ -26,10 +26,12 @@ public class ActivityDetails extends AppCompatActivity {
             Animal animal = (Animal) getIntent().getSerializableExtra("animal");
             description = findViewById(R.id.description);
             iView = findViewById(R.id.imageView);
-            description.setText(animal.getNombre());
-            Glide.with(this)
-                    .load(animal.getUrlImage())
-                    .into(iView);
+            tViewDonations = findViewById(R.id.textAmount);
+            description.setText(animal.getDescripcion());
+            tViewDonations.setText(animal.getCantidadRecaudada().concat(" €"));
+                Glide.with(this)
+                        .load(R.drawable.noimage)
+                        .into(iView);
         }
     }
 }

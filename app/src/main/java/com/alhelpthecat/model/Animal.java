@@ -4,15 +4,16 @@ import java.io.Serializable;
 
 public class Animal implements Serializable {
 
-    String nombre, veterinario, urlImage, cantidadPendiente, cantidadRecaudada, intervenciones;
+    String nombre, veterinario, urlImage, cantidadPendiente, cantidadRecaudada, intervenciones, descripcion;
 
-    public Animal(String nombre, String veterinario, String urlImage, String cantidadPendiente, String cantidadRecaudada, String intervenciones) {
+    public Animal(String nombre, String veterinario, String urlImage, String cantidadPendiente, String cantidadRecaudada, String intervenciones, String descripcion) {
         this.nombre = nombre;
         this.veterinario = veterinario;
         this.urlImage = urlImage;
         this.cantidadPendiente = cantidadPendiente;
         this.cantidadRecaudada = cantidadRecaudada;
         this.intervenciones = intervenciones;
+        this.descripcion = descripcion;
     }
 
     public Animal() {
@@ -65,5 +66,13 @@ public class Animal implements Serializable {
 
     public void setIntervenciones(String intervenciones) {
         this.intervenciones = intervenciones;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
